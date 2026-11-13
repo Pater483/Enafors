@@ -57,7 +57,7 @@
       <h1>Enafors</h1>
       <div class="desc">Bokningar de kommande 12 månaderna.<br>Datum som inte syns här är lediga.</div>
     </div>
-    <div class="updated">Uppdaterat<br>12 nov 2026</div>
+    <div class="updated" id="updated"></div>
   </div>
 
   <div id="hero"></div>
@@ -66,7 +66,8 @@
   <div class="footer">Frågor om bokning: Patrik.</div>
 
 </div>
-<script>
+<script>ocument.getElementById("updated").innerHTML = "Uppdaterat<br>" +
+  new Date(document.lastModified).toLocaleDateString("sv-SE", { day: "numeric", month: "short", year: "numeric" });
 // Lägg till bokningar här: start, slut (samma datum om en dag), gäst
 const BOOKINGS = [
   { start: "2027-03-17", end: "2027-03-21", guest: "Patrik, Weman, Flodda, Bias & Hasse" },
